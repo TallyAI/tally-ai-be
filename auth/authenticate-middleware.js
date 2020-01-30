@@ -7,14 +7,15 @@ module.exports = (req, res, next) => {
 
   if (token) {
     jwt.verify(token, secret, (err, decodedToken) => {
-      if(err) {
+      if (err) {
         res.status(401).json('Unauthorized')
       } else {
+        console.log("Decoded token in authMiddleware: ", decodedToken);
         req.decodedJwt = decodedToken;
         next();
       }
     });
   } else {
-    res.status(401).json({ message: "Credentials required"});
+    res.status(401).json({ message: "Credentials required" });
   }
 };

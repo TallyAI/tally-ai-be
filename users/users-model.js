@@ -15,6 +15,10 @@ module.exports = {
   destroyFavorite
 };
 
+async function getUserId(filter) {
+  return await db("users as u").where(filter).select("u.id");
+}
+
 async function getUsers(id) {
   try {
     const user = await getUserInfo(id);
