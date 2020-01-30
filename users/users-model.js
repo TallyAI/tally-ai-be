@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
   getUsers,
+  getUserId,
   getBusinesses,
   getFavorites,
   findByBusinessID,
