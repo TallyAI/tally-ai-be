@@ -16,8 +16,8 @@ module.exports = {
   destroyFavorite
 };
 
-async function getUserId(filter) {
-  return await db("tallyweb.users as u").where(filter).select("u.id");
+function getUserId(filter) {
+  return db("tallyweb.users as u").where(filter).select("u.id");
 }
 
 async function getUsers(id) {
