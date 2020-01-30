@@ -17,7 +17,7 @@ module.exports = {
 };
 
 async function getUserId(filter) {
-  return await db("users as u").where(filter).select("u.id");
+  return await db("tallyweb.users as u").where(filter).select("u.id");
 }
 
 async function getUsers(id) {
